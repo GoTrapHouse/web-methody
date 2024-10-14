@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Практическое занятие 2</title>
+		<link rel="icon" type="image/png" href="photo/title.jpg" />
+	</head>
+	<body>
+		<header>
+			<div class="header-content">
+				<div class="logo-container">
+					<a href="index.html">
+						<img src="photo/logo.jpg" alt="Логотип" class="logo" />
+					</a>
+				</div>
+				<div class="text-content">
+					<h1>Практическое занятие 2</h1>
+					<h2>Каскадные таблицы стилей</h2>
+				</div>
+				<div class="button-container">
+					<div class="group">
+						<svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+							<g>
+								<path
+									d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+								></path>
+							</g>
+						</svg>
+						<input
+							id="query"
+							class="input"
+							type="search"
+							placeholder="Поиск..."
+							name="searchbar"
+						/>
+					</div>
+					<a href="https://uisi.ru/" class="button" id="site-urtisi">УрТИСИ</a>
+					<a href="https://ist.uisi.ru/" class="button" id="site-ist">ИСТ</a>
+					<a
+						href="download/Методические указания по выполнению лабораторных работ по дисциплине web-технологии.doc"
+						download
+						class="save-button"
+						>Скачать</a
+					>
+					<input type="checkbox" class="l" id="theme-toggle" />
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="dark-theme">
+    <h2>Цель работы</h2>
+    <ol>
+        <li>Изучить основы каскадных таблиц стилей (CSS).</li>
+        <li>Получить навыки работы с внешними таблицами стилей для форматирования элементов веб-страниц.</li>
+    </ol>
+</section>
+
+<section class="dark-theme video-section">
+				<h2>Видео</h2>
+				<div class="video-container">
+					<video controls width="250" poster="photo/video2.jpg">
+						<source src="videos/video2.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<p class="video-caption">Урок создания сайта</p>
+			</section>
+
+<section class="dark-theme">
+    <h2>Задание</h2>
+    <ul>
+        <li>Создать внешние таблицы стилей для вашего сайта.Создать 3 таблицы стеля: для мобильных телефонов, для печати и для основного стиля</li>
+        <li>Подключить таблицы стилей к макету страницы.</li>
+        <li>Оформить элементы сайта с помощью CSS: задать шрифты, отступы, цвета и другие параметры.</li>
+    </ul>
+</section>
+
+<section class="dark-theme">
+    <h3>Контрольные вопросы</h3>
+    <ol>
+        <li>Каково назначение каскадных таблиц стилей?</li>
+        <li>Как задать обтекание текстом по правой стороне?</li>
+        <li>Как поместить элемент веб-страницы за видимую область экрана?</li>
+    </ol>
+</section>
+
+<section class="dark-theme">
+    <h3>Тест по теме "Каскадные таблицы стилей"</h3>
+    <form id="quiz-form">
+        <div>
+            <p>1. Что такое CSS?</p>
+            <label><input type="radio" name="question1" value="incorrect"> Язык разметки для создания веб-страниц</label><br>
+            <label><input type="radio" name="question1" value="correct"> Язык стилей для описания внешнего вида веб-страниц</label><br>
+            <label><input type="radio" name="question1" value="incorrect"> Язык программирования</label><br>
+        </div>
+        <div>
+            <p>2. Какой тег используется для подключения CSS файла?</p>
+            <label><input type="radio" name="question2" value="incorrect"> &lt;css&gt;</label><br>
+            <label><input type="radio" name="question2" value="incorrect"> &lt;style&gt;</label><br>
+            <label><input type="radio" name="question2" value="correct"> &lt;link&gt;</label><br>
+        </div>
+        <button type="button" id="submit-quiz" class="button">Проверить ответы</button>
+    </form>
+    <div id="result" style="margin-top: 20px; display: none;"></div>
+</section>
+
+<script>
+    document.getElementById('submit-quiz').addEventListener('click', function () {
+        const answers = {
+            question1: 'correct',
+            question2: 'correct'
+        };
+
+        let score = 0;
+        let totalQuestions = 2;
+
+        const q1Answer = document.querySelector('input[name="question1"]:checked');
+        if (q1Answer && q1Answer.value === answers.question1) {
+            score++;
+        }
+
+        const q2Answer = document.querySelector('input[name="question2"]:checked');
+        if (q2Answer && q2Answer.value === answers.question2) {
+            score++;
+        }
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `Ваши баллы: ${score} из ${totalQuestions}`;
+    });
+</script>
+
+
+		<footer class="dark-theme">
+			<p><a href="index.html">Назад к содержанию</a></p>
+			<p><a href="practice1.html">Назад к прошлой практической работе</a></p>
+			<p><a href="practice3.html">К следующей практической работе</a></p>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
